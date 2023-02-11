@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- bs4 -->
+    <link rel="stylesheet" 
+        href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" 
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 
+        crossorigin="anonymous"
+        >
+    <!-- awesome -->
+    <link 
+        rel="stylesheet" 
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" 
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" 
+        crossorigin="anonymous" 
+        referrerpolicy="no-referrer" 
+        />
+    <!-- my css -->
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+    <div id="loading">
+        <div class="spinner-border text-warning" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+
+    <div id="product">
+        <div id="shopping-cart">
+            <div id="fliter">
+                <select onchange="filterProduct()" id="fliter-select">
+                    <option value="all">Tất cả</option>
+                    <option value="iphone">iphone</option>
+                    <option value="Samsung">Sam sung</option>
+                </select>
+            </div>
+            <button onclick="showCart()" class="cart-icon">
+                <i class="fa-solid fa-cart-shopping"></i>
+            </button>
+            <div id="shopping-cart-quantity">0</div>
+        </div>
+
+        <!-- cart container -->
+        <div onclick="closeCart()" id="cart-container">
+            <!-- cart content -->
+            <div id="cart-content">
+                <!-- cart-header -->
+                <div class="cart-header">
+                    <h1>Cart</h1>
+                    <i onclick="closeCart()" class="fa-solid fa-xmark"></i>
+                </div>
+                <!-- cart-list -->
+                <div class="cart-list" id="cart-list-js">
+                    
+                </div>
+                <!-- cart-buy-clear -->
+                <div class="cart-buy-clear">
+                    <div id="cart-total">
+                        Total: $<span id="tongTienAll-js">0</span>
+                    </div>
+                    <div id="cart-btn">
+                        <button onclick="purchase()" id="cart-btn-buy">
+                            Purchase 
+                            <i class="fa-regular fa-credit-card"></i>
+                        </button>
+                        <button onclick="clearCart()" id="cart-btn-clear">
+                            Clear cart
+                            <i class="fa-solid fa-trash"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="purchase">
+                <div id="purchase-order">
+
+                </div>
+            </div>
+        </div>
+
+            <!-- container -->
+        <div class="myContainer">
+            <div id="productList" class="product-list">
+                <!-- item -->
+                <!-- <div class="product-item">
+                    <div class="content-item">
+
+                        <div class="content-top">
+                            <img src="./img/samsung.png" alt="ad">
+                            <em>In Stock</em>
+                        </div>
+
+                        <div class="content-img">
+                            <img src="https://cdn.tgdd.vn/Products/Images/42/114115/iphone-x-64gb-hh-600x600.jpg" alt="">
+                        </div>
+
+                        <div class="content-details">
+                            <div>
+                                <div class="details-name">
+                                    <h4>iphoneX</h4>
+                                    <button onclick="like(this)"><i class="fa-solid fa-heart"></i></button>
+                                </div>
+                                <div class="details-text">
+                                    <p class="screen">Screen: screen 68</p>
+                                    <p class="back-camera">Back camera: 2 camera 12 MP</p>
+                                    <p class="front-camera">Front camera: 7 MP</p>
+                                    <p class="desc">Desc: Thiết kế mang tính đột phá Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor</p>
+                                </div>
+                            </div>
+
+                            <div class="price-buy">
+                                <p>$ <span>1000</span></p>
+                                <div class="buy-now" id="buy-now-js">
+                                    <button onclick="addProductCart(this)">Buy now</button>
+                                </div>
+                                <div class="buy-content" id="buy-content-js">
+                                    <div class="buy-quantity">
+                                        <button onclick="chonGiamSoLuong(this)">
+                                            <i class="fa-solid fa-caret-left"></i>
+                                        </button>
+                                        <span>10</span>
+                                        <button onclick="chonTangSoLuong(this)">
+                                            <i class="fa-solid fa-caret-right"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- my js -->
+    <!-- axios js -->
+    <script 
+        src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.5/axios.min.js" 
+        integrity="sha512-JEXkqJItqNp0+qvX53ETuwTLoz/r1Tn5yTRnZWWz0ghMKM2WFCEYLdQnsdcYnryMNANMAnxNcBa/dN7wQtESdw==" 
+        crossorigin="anonymous" 
+        referrerpolicy="no-referrer">
+    </script>
+    <!-- ProductCart js -->
+    <script src="./js/ProductList.js"></script>
+    <!-- controller js -->
+    <script src="./js/controllers.js"></script>
+    <!-- main js -->
+    <script src="./js/main.js"></script>
+</body>
+</html>
